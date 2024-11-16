@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "packup"
+version = "0.1.0"
+description = "Minecraft modpack packaging utility"
+authors = ["RukaCollie <rukacollie@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "cli"}]
+
+[tool.poetry.scripts]
+packup = "cli:cli"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+click = "^8.1.7"
+pydantic = "^2.9.2"
+requests = "^2.32.3"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.13.0"
+
+
+[tool.basedpyright]
+exclude = [
+  "**/__pycache__",
+]
+reportMissingTypeStubs = false
+typeCheckingMode = "basic"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
